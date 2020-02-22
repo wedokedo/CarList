@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CarList</string>
+    <string name="get_cars_error">Error while fetching cars</string>
+    <string name="cars_fragment_title">Awesome Cars</string>
+    <string name="cars_fragment_details_title">Details</string>
+    <string name="purchase_btn_text">Purchase Car</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="price">Price</string>
+</resources>

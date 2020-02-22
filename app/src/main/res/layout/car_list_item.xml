@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="car"
+            type="app.mobile.carlist.cars.data.Car" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small"
+        android:onClick="@{clickListener}">
+        <ImageView
+            android:id="@+id/car_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/photo_place_holder"
+            android:layout_alignParentLeft="true"
+            android:layout_toRightOf="@id/car_img"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/car_img"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/price"
+            android:layout_marginLeft="@dimen/margin_default">
+
+            <TextView
+                android:id="@+id/make"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{car.make}"
+                android:textStyle="bold"
+                tools:text="Mercedes-Benz"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/large_text_size"
+                />
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{car.model}"
+                tools:text="A1 1.6 TDI Sportback S tronic"
+                android:layout_marginTop="@dimen/margin_small"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`$` +car.price}"
+            tools:text="$2000.00"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_margin="@dimen/margin_small"
+            />
+
+    </RelativeLayout>
+
+</layout>
